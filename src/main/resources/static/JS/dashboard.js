@@ -71,19 +71,18 @@ function func1(list,r){
     function removeRow(btnn) {
         var empTab = document.getElementById('table');
         var x=btnn.parentNode.parentNode.rowIndex;
-        empTab.deleteRow(x); // buttton -> td -> tr
+         // buttton -> td -> tr
         var xhttp1 = new XMLHttpRequest();
          xhttp1.open("DELETE", "http://localhost:8080/deleteUser", true);
         xhttp1.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                alert("UserDeleted")
+                alert("User Deleted")
 
             }
         };
         xhttp1.send(table.rows[x].cells[2].innerHTML);
 console.log(x,table.rows[x].cells[2].innerHTML);
-        empTab.deleteRow(x+1); // buttton -> td -> tr
-
+        empTab.deleteRow(x); // buttton -> td -> tr
     }
     function editt()
     {
